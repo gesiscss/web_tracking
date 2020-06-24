@@ -7,11 +7,3 @@ class Measurement(ABC, Validator):
     @abstractmethod
     def calculate(self, df, **kwargs):
         pass
-
-    @abstractmethod
-    def validate_input(self):
-        pass
-
-    @abstractmethod
-    def validate_output(self):
-        pass

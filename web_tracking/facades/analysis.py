@@ -1,11 +1,10 @@
 from math import ceil, floor
 
-import matplotlib.pyplot as plt
 import matplotlib as mpl
+import matplotlib.pyplot as plt
 import pandas as pd
-from IPython.display import display
 import statsmodels.api as sm
-
+from IPython.display import display
 from matplotlib import cm
 from matplotlib.colors import rgb2hex
 
@@ -14,7 +13,9 @@ from ..measures.entropy_rate import EntropyRate
 from ..measures.predictability import Predictability
 from ..utils.utils import Utils
 
+
 class Analysis():
+    """"""
 
     ENTROPY_OPTIONS = ('shannon', 'random')
     ENTROPY_RATE_OPTIONS = ('lz')
@@ -67,6 +68,25 @@ class Analysis():
 
 
     def compute_entropy(self, df, features, workers=1, options=[*ENTROPY_OPTIONS, *ENTROPY_RATE_OPTIONS]):
+        """
+            Computes multiple selected entropy measures.
+
+            Parameters
+            ----------
+            df: pandas.DataFrame
+                An input dataframe.
+            features: list
+                A list of columns which the entropy is calculated with.
+            workers: int
+                A number of parallel workers during process, number of used CPUs.
+            options: list
+                Selected entropy measures.
+
+            Returns
+            -------
+            pandas.DataFrame
+                A dataframe with calculated values.
+        """
         self.df_entropy = pd.DataFrame()
 
         if any([opt in Analysis.ENTROPY_OPTIONS for opt in options]):
@@ -82,6 +102,23 @@ class Analysis():
 
 
     def compute_predictability(self, df_entropy, features, options=PREDICTABILITY_OPTIONS):
+        """
+            Computes multiple selected entropy measures.
+
+            Parameters
+            ----------
+            df: pandas.DataFrame
+                An input dataframe.
+            features: list
+                A list of columns which the predictability is calculated with.
+            options: list
+                Selected predictability measures.
+
+            Returns
+            -------
+            pandas.DataFrame:
+                A dataframe with calculated values.
+        """
         self.df_predictability = pd.DataFrame()
         self.Predictability.calculate(df_entropy, features=features)
         self.df_predictability = self.Predictability.df
@@ -89,6 +126,22 @@ class Analysis():
 
 
     def compute_regression_model(self, df, output, variables):
+        """
+            Computes a regression model.
+
+            Parameters
+            ----------
+            df: pandas.DataFrame
+                An input dataframe.
+            output: string
+                y variable for the regression model.
+            variables: list
+                x variables for the regression model.
+
+            Returns
+            -------
+            Tuple(R², Correlation Coefficients)
+        """
         TEMP = df[[output, *variables]].dropna()
         X = TEMP[variables]
         X = sm.add_constant(X)
@@ -102,8 +155,24 @@ class Analysis():
         return MODEL.rsquared_adj, COEFS
 
 
-    def plot_coefficient_intervals(self, coefs, threshold, ylabel='Attributes', **kwargs):
-        TEMP = coefs.assign(n=lambda df: range(1, len(df)+1))
+    def plot_coefficient_intervals(self, df_coefs, threshold, ylabel='Attributes', **kwargs):
+        """
+            Computes a coefficient intervals.
+
+            Parameters
+            ----------
+            df_coefs: pandas.DataFrame
+                An input dataframe.
+            threshold: float
+                Alpha value for the statistical significance.
+            ylabel:
+                y-axis label.
+
+            Returns
+            -------
+            matplotlib.axes
+        """
+        TEMP = df_coefs.assign(n=lambda df: range(1, len(df)+1))
         COLORS = ['tomato' if p < threshold else 'steelblue' for p in TEMP.p_value]
         ax = TEMP.plot.scatter(x='coef', y='n', color=COLORS, **kwargs)
         ax.axvline(0, color='grey', linestyle='--', alpha=.5)
@@ -121,6 +190,20 @@ class Analysis():
 
 
     def display_descriptive_stats(self, df, columns):
+        """
+            Shows various descriptive stats over dataframe.
+
+            Parameters
+            ----------
+            df: pandas.DataFrame
+                An input dataframe.
+            columns: list
+                Selected columns to show descriptive stats.
+
+            Returns
+            -------
+            Tuple(pandas.DataFrame, pandas.DataFrame, pandas.DataFrame, )
+        """
         attributes_categorical = []
         attributes_numeric = []
         attributes_other = []
@@ -163,6 +246,24 @@ class Analysis():
 
 
     def display_descriptive_stats_per_attribute(self, df, df_meta, merge_on, attribute):
+        """
+            Shows various descriptive stats on demographic attributes.
+
+            Parameters
+            ----------
+            df: pandas.DataFrame
+                An input dataframe with numerical values.
+            df_meta: pandas.DataFrame
+                An input dataframe with meta data such as demographic.
+            merge_on: string
+                The merging column for both dataframes.
+            attribute: string
+                The meta dataframe column to display descriptive stats.
+
+            Returns
+            -------
+            pandas.DataFrame
+        """
         total_domain_count = df.domain.count()
         num_unq_domains = df.domain.nunique()
         total_active_seconds = df.active_seconds.sum()
@@ -199,6 +300,30 @@ class Analysis():
 
 
     def display_distribution_plot(self, df, df_meta, merge_on, measure, subject, attribute=None, **kwargs):
+        """
+            Plots distribution plots with selected options.
+
+            Parameters
+            ----------
+            df: pandas.DataFrame
+                An input dataframe.
+            df: pandas.DataFrame
+                An input dataframe with numerical values.
+            df_meta: pandas.DataFrame
+                An input dataframe with meta data such as demographic.
+            merge_on: string
+                The merging column for both dataframes.
+            measure: string
+                The selected measure, entropy or predictability.
+            subject: string
+                The selected subject, i.e. domain, category ...
+            attribute: string
+                The meta dataframe column to group results on, default is None.
+
+            Returns
+            -------
+            void
+        """
         # measure: entropy, predictability
         # subject: domain, category
         X_LABEL = 'Predictability' if measure.lower() == 'pi' else measure.title()

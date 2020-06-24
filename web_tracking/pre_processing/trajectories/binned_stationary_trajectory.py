@@ -11,20 +11,23 @@ class BinnedStationaryTrajectory(Trajectory):
 
     COLUMNS = ['uid', 'user', 'domain', 'category', 'starts', 'ends', 'active_seconds']
 
-    def __init__(self, raw, **kwargs):
+    def __init__(self, raw, validation_enabled=False, **kwargs):
         """Inherits the parent class constructor, and applies a validation.
 
         Parameters
         ----------
         raw:
             An input dataframe.
+        validation_enabled: boolean,
+            If true, checks if input dataframe is correctly provided.
 
         Returns
         -------
         void
         """
         super().__init__(raw)
-        # self.validate_input()
+        if validation_enabled:
+            self.validate_input()
 
 
     def create(self, **kwargs):
@@ -45,8 +48,6 @@ class BinnedStationaryTrajectory(Trajectory):
             self.bin_size = kwargs.get('bin_size', None)
             if self.bin_size is None:
                 raise ValueError('Please give a bin size value.')
-            # check input dataframe
-            # self.validate_input()
             # processing
             starts_global = self.raw['starts'].min()
             temp = self.raw \
@@ -66,8 +67,6 @@ class BinnedStationaryTrajectory(Trajectory):
                         .merge(temp[['user', 'uid', 'domain']], on=['user', 'uid'])
 
             return self.df
-            # check output dataframe
-            # self.validate_output()
         except Exception as e:
             logging.error(e)
 
@@ -120,27 +119,6 @@ class BinnedStationaryTrajectory(Trajectory):
         self.check_columns(BinnedTrajectory.COLUMNS, self.raw.columns)
         self.check_dtypes(self.raw, [('uid', 'any'),
                                      ('user', 'object'),
-                                     ('domain', 'object'),
                                      ('starts', 'datetime'),
                                      ('ends', 'datetime'),
                                      ('active_seconds', 'numeric')])
-
-
-    def validate_output(self):
-        """Executes the validation functions for the output trajectory.
-
-        Parameters
-        ----------
-        void
-
-        Returns
-        -------
-        void
-        """
-        self.check_dtypes(self.df, [('uid', 'any'),
-                                    ('user', 'object'),
-                                    ('domain', 'object'),
-                                    ('category', 'object'),
-                                    ('bin', 'numeric'),
-                                    ('seconds', 'numeric'),
-                                    ('share', 'numeric')])

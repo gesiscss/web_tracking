@@ -14,9 +14,5 @@ class Trajectory(ABC, Validator):
         pass
 
     @abstractmethod
-    def validate_output(self):
-        pass
-
-    @abstractmethod
     def validate_input(self):
         pass

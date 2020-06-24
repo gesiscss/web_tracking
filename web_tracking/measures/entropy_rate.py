@@ -21,11 +21,14 @@ class EntropyRate(Measurement):
     def __init__(self):
         self.COLUMNS = ['user', 'domain', 'category']
 
+
     def calculate(self, df_input, **kwargs):
         """Computes the Lempel-Ziv Entropy on selected features.
 
         Parameters
         ----------
+        df_input:
+            An input dataframe.
         group: str
             A column for grouping, it is 'user' as default.
         features: list
@@ -42,11 +45,9 @@ class EntropyRate(Measurement):
             workers  = kwargs.get('workers', 1)
 
             self.raw = df_input
-            # self.validate_input()
             self.df = df_input \
                         .groupby(group, as_index=False) \
                         .agg({f: list for f in features})
-            # self.check_dtypes(self.df, [(f"{f}", 'list') for f in features])
 
             if workers < 2:
 
@@ -58,8 +59,6 @@ class EntropyRate(Measurement):
                 with mp.Pool(workers) as pool:
                     self.df = pd.concat(pool.map(partial(compute, features=features), df_split))
 
-            # self.validate_output()
-            # self.check_dtypes(self.df, [(f"{f}_entropy_lz", 'numeric') for f in features])
 
             self.df = self.df.drop(columns=[f for f in features])
 
@@ -67,13 +66,6 @@ class EntropyRate(Measurement):
         except Exception as e:
             logging.error(e)
 
-
-    def validate_input(self):
-        self.check_columns(self.COLUMNS, self.raw.columns)
-        self.check_dtypes(self.raw, [('user', 'object'), ('domain', 'object'), ('category', 'object')])
-
-    def validate_output(self):
-        pass
 
     @staticmethod
     def __lempel_ziv_estimate__(seq):

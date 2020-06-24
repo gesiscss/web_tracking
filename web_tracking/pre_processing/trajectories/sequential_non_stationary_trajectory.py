@@ -8,20 +8,23 @@ class SequentialNonStationaryTrajectory(Trajectory):
 
     COLUMNS = ['uid', 'user', 'domain', 'category', 'starts', 'ends', 'active_seconds', 'gap_seconds']
 
-    def __init__(self, raw, **kwargs):
+    def __init__(self, raw, validation_enabled=False, **kwargs):
         """Inherits the parent class constructor, and applies a validation.
 
         Parameters
         ----------
         raw:
             An input dataframe.
+        validation_enabled: boolean,
+            If true, checks if input dataframe is correctly provided.
 
         Returns
         -------
         void
         """
         super().__init__(raw)
-        # self.validate_input()
+        if validation_enabled:
+            self.validate_input()
 
 
     def create(self, **kwargs):
@@ -31,6 +34,8 @@ class SequentialNonStationaryTrajectory(Trajectory):
         ----------
         threshold: int
             The seconds input which will be used for aggregation. To aggregate, gap seconds should be under threshold.
+        features: [string], default is ['domain']
+            Array of features that we create trajectories from.
 
         Returns
         -------
@@ -45,8 +50,6 @@ class SequentialNonStationaryTrajectory(Trajectory):
 
             if self.threshold is None:
                 raise ValueError('Please give a threshold value.')
-            # check input dataframe
-            # self.validate_input()
             # processing
             for feat in self.features:
                 temp = self.raw.copy() \
@@ -77,8 +80,6 @@ class SequentialNonStationaryTrajectory(Trajectory):
                 self.dfs[feat] = temp
 
             return self.dfs
-            # check output dataframe
-            # self.validate_output()
 
         except Exception as e:
             logging.error(e)
@@ -98,30 +99,7 @@ class SequentialNonStationaryTrajectory(Trajectory):
         self.check_columns(DomainAggregatedTrajectory.COLUMNS, self.raw.columns)
         self.check_dtypes(self.raw, [('uid', 'any'),
                                      ('user', 'object'),
-                                     ('domain', 'object'),
-                                     ('category', 'object'),
                                      ('starts', 'datetime'),
                                      ('ends', 'datetime'),
                                      ('active_seconds', 'numeric'),
                                      ('gap_seconds', 'numeric')])
-
-
-    def validate_output(self):
-        """Executes the validation functions for the output trajectory.
-
-        Parameters
-        ----------
-        void
-
-        Returns
-        -------
-        void
-        """
-        self.check_dtypes(self.df, [('uids', 'list'),
-                                    ('user', 'object'),
-                                    ('domain', 'object'),
-                                    ('category', 'object'),
-                                    ('starts', 'datetime'),
-                                    ('ends', 'datetime'),
-                                    ('cumulative_active_seconds', 'numeric'),
-                                    ('gap_seconds', 'numeric')])

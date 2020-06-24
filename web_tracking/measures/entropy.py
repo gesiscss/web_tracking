@@ -43,6 +43,8 @@ class Entropy(Measurement):
 
         Parameters
         ----------
+        df_input:
+            An input dataframe.
         options: list
             A list of entropy types, the random and shannon is selectable, and it takes both of them as default.
         group: str
@@ -83,16 +85,6 @@ class Entropy(Measurement):
         except Exception as e:
             logging.error(e)
 
-
-    def validate_input(self):
-        pass
-        # self.check_columns(self.COLUMNS, self.raw.columns)
-        # self.check_dtypes(self.raw, [('user', 'object'), ('domain', 'object'), ('category', 'object')])
-
-
-    def validate_output(self):
-        pass
-         # self.check_dtypes(self.df, [('user', 'object'), ('domains', 'list'), ('categories', 'list')])
 
     def __get_entropy_function__(self, opt):
         if opt.lower() == 'shannon':

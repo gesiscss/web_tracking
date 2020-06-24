@@ -4,7 +4,6 @@ from functools import partial
 
 import numpy as np
 import pandas as pd
-
 from scipy.optimize import fsolve
 
 from .measurement import Measurement
@@ -25,11 +24,14 @@ class Predictability(Measurement):
     PREDICTABILITY_OPTIONS = ('pi_unc', 'pi_rand', 'pi_max')
     PE = dict(zip(PREDICTABILITY_OPTIONS, ENTROPY_OPTIONS))
 
+
     def calculate(self, df, **kwargs):
         """Computes the Predictability on selected features.
 
         Parameters
         ----------
+        df:
+            An input dataframe.
         options: list
             A list of predictability types, uncorrelated(pi_unc), random(pi_rand) and maximum(pi_max) predictability is selectable. All is enabled as default
         features: list
@@ -60,12 +62,6 @@ class Predictability(Measurement):
         except Exception as e:
             logging.error(e)
 
-    # TODO: refactor
-    def validate_input(self):
-        pass
-
-    def validate_output(self):
-        pass
 
     @staticmethod
     def __pi__(unique_places, entropy):

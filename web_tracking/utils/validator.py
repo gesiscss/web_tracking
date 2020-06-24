@@ -58,11 +58,6 @@ class Validator:
             logging.error(e)
 
 
-    # TODO: consistency check: uniqueness, end - start > 0, active_seconds > 0, gap_seconds > 0, url regex, domain regex
-    def check_consistency(self):
-        pass
-
-
     def __get_validator_func__(self, t):
         """Returns a column type validator function.
 
