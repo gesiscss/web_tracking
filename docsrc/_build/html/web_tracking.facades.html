@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>web_tracking.facades package &mdash; Web Tracking 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Web Tracking
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">web_tracking.facades package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-web_tracking.facades.analysis">web_tracking.facades.analysis module</a></li>
+<li><a class="reference internal" href="#module-web_tracking.facades">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Web Tracking</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>web_tracking.facades package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/web_tracking.facades.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="web-tracking-facades-package">
+<h1>web_tracking.facades package<a class="headerlink" href="#web-tracking-facades-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-web_tracking.facades.analysis">
+<span id="web-tracking-facades-analysis-module"></span><h2>web_tracking.facades.analysis module<a class="headerlink" href="#module-web_tracking.facades.analysis" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="web_tracking.facades.analysis.Analysis">
+<em class="property">class </em><code class="sig-prename descclassname">web_tracking.facades.analysis.</code><code class="sig-name descname">Analysis</code><a class="headerlink" href="#web_tracking.facades.analysis.Analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt id="web_tracking.facades.analysis.Analysis.ENTROPY_OPTIONS">
+<code class="sig-name descname">ENTROPY_OPTIONS</code><em class="property"> = ('shannon', 'random')</em><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.ENTROPY_OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="web_tracking.facades.analysis.Analysis.ENTROPY_RATE_OPTIONS">
+<code class="sig-name descname">ENTROPY_RATE_OPTIONS</code><em class="property"> = 'lz'</em><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.ENTROPY_RATE_OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="web_tracking.facades.analysis.Analysis.PREDICTABILITY_OPTIONS">
+<code class="sig-name descname">PREDICTABILITY_OPTIONS</code><em class="property"> = ('pi_unc', 'pi_rand', 'pi_max')</em><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.PREDICTABILITY_OPTIONS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="web_tracking.facades.analysis.Analysis.STATS_COLS">
+<code class="sig-name descname">STATS_COLS</code><em class="property"> = ['domain_count', 'domain_count_coverage', 'domain_nunique', 'domain_unique_coverage', 'active_seconds_sum', 'active_seconds_coverage', 'active_seconds_mean', 'active_seconds_median', 'gap_seconds_mean']</em><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.STATS_COLS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="web_tracking.facades.analysis.Analysis.STATS_FORMATTERS">
+<code class="sig-name descname">STATS_FORMATTERS</code><em class="property"> = {'active_seconds_coverage': '{:.2%}', 'active_seconds_mean': '{:,.0f}', 'active_seconds_sum': '{:,.0f}', 'domain_count': '{:,}', 'domain_count_coverage': '{:.2%}', 'domain_nunique': '{:,}', 'domain_unique_coverage': '{:.2%}', 'gap_seconds_mean': '{:,.0f}'}</em><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.STATS_FORMATTERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.facades.analysis.Analysis.compute_entropy">
+<code class="sig-name descname">compute_entropy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">workers</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">['shannon', 'random', 'l', 'z']</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.compute_entropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes multiple selected entropy measures.</p>
+<dl class="simple">
+<dt>df: pandas.DataFrame</dt><dd><p>An input dataframe.</p>
+</dd>
+<dt>features: list</dt><dd><p>A list of columns which the entropy is calculated with.</p>
+</dd>
+<dt>workers: int</dt><dd><p>A number of parallel workers during process, number of used CPUs.</p>
+</dd>
+<dt>options: list</dt><dd><p>Selected entropy measures.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>pandas.DataFrame</dt><dd><p>A dataframe with calculated values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.facades.analysis.Analysis.compute_predictability">
+<code class="sig-name descname">compute_predictability</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_entropy</span></em>, <em class="sig-param"><span class="n">features</span></em>, <em class="sig-param"><span class="n">options</span><span class="o">=</span><span class="default_value">'pi_unc', 'pi_rand', 'pi_max'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.compute_predictability" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes multiple selected entropy measures.</p>
+<dl class="simple">
+<dt>df: pandas.DataFrame</dt><dd><p>An input dataframe.</p>
+</dd>
+<dt>features: list</dt><dd><p>A list of columns which the predictability is calculated with.</p>
+</dd>
+<dt>options: list</dt><dd><p>Selected predictability measures.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>pandas.DataFrame:</dt><dd><p>A dataframe with calculated values.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.facades.analysis.Analysis.compute_regression_model">
+<code class="sig-name descname">compute_regression_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="n">variables</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.compute_regression_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a regression model.</p>
+<dl class="simple">
+<dt>df: pandas.DataFrame</dt><dd><p>An input dataframe.</p>
+</dd>
+<dt>output: string</dt><dd><p>y variable for the regression model.</p>
+</dd>
+<dt>variables: list</dt><dd><p>x variables for the regression model.</p>
+</dd>
+</dl>
+<p>Tuple(R², Correlation Coefficients)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.facades.analysis.Analysis.display_descriptive_stats">
+<code class="sig-name descname">display_descriptive_stats</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">columns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.display_descriptive_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows various descriptive stats over dataframe.</p>
+<dl class="simple">
+<dt>df: pandas.DataFrame</dt><dd><p>An input dataframe.</p>
+</dd>
+<dt>columns: list</dt><dd><p>Selected columns to show descriptive stats.</p>
+</dd>
+</dl>
+<p>Tuple(pandas.DataFrame, pandas.DataFrame, pandas.DataFrame, )</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.facades.analysis.Analysis.display_descriptive_stats_per_attribute">
+<code class="sig-name descname">display_descriptive_stats_per_attribute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">df_meta</span></em>, <em class="sig-param"><span class="n">merge_on</span></em>, <em class="sig-param"><span class="n">attribute</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.display_descriptive_stats_per_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shows various descriptive stats on demographic attributes.</p>
+<dl class="simple">
+<dt>df: pandas.DataFrame</dt><dd><p>An input dataframe with numerical values.</p>
+</dd>
+<dt>df_meta: pandas.DataFrame</dt><dd><p>An input dataframe with meta data such as demographic.</p>
+</dd>
+<dt>merge_on: string</dt><dd><p>The merging column for both dataframes.</p>
+</dd>
+<dt>attribute: string</dt><dd><p>The meta dataframe column to display descriptive stats.</p>
+</dd>
+</dl>
+<p>pandas.DataFrame</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.facades.analysis.Analysis.display_distribution_plot">
+<code class="sig-name descname">display_distribution_plot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">df_meta</span></em>, <em class="sig-param"><span class="n">merge_on</span></em>, <em class="sig-param"><span class="n">measure</span></em>, <em class="sig-param"><span class="n">subject</span></em>, <em class="sig-param"><span class="n">attribute</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.display_distribution_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots distribution plots with selected options.</p>
+<dl class="simple">
+<dt>df: pandas.DataFrame</dt><dd><p>An input dataframe.</p>
+</dd>
+<dt>df: pandas.DataFrame</dt><dd><p>An input dataframe with numerical values.</p>
+</dd>
+<dt>df_meta: pandas.DataFrame</dt><dd><p>An input dataframe with meta data such as demographic.</p>
+</dd>
+<dt>merge_on: string</dt><dd><p>The merging column for both dataframes.</p>
+</dd>
+<dt>measure: string</dt><dd><p>The selected measure, entropy or predictability.</p>
+</dd>
+<dt>subject: string</dt><dd><p>The selected subject, i.e. domain, category …</p>
+</dd>
+<dt>attribute: string</dt><dd><p>The meta dataframe column to group results on, default is None.</p>
+</dd>
+</dl>
+<p>void</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.facades.analysis.Analysis.plot_coefficient_intervals">
+<code class="sig-name descname">plot_coefficient_intervals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df_coefs</span></em>, <em class="sig-param"><span class="n">threshold</span></em>, <em class="sig-param"><span class="n">ylabel</span><span class="o">=</span><span class="default_value">'Attributes'</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.facades.analysis.Analysis.plot_coefficient_intervals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes a coefficient intervals.</p>
+<dl class="simple">
+<dt>df_coefs: pandas.DataFrame</dt><dd><p>An input dataframe.</p>
+</dd>
+<dt>threshold: float</dt><dd><p>Alpha value for the statistical significance.</p>
+</dd>
+<dt>ylabel:</dt><dd><p>y-axis label.</p>
+</dd>
+</dl>
+<p>matplotlib.axes</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-web_tracking.facades">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-web_tracking.facades" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Orkut Karacalik
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

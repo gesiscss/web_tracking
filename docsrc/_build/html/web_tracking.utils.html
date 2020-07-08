@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>web_tracking.utils package &mdash; Web Tracking 0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Web Tracking
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">web_tracking.utils package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-web_tracking.utils.utils">web_tracking.utils.utils module</a></li>
+<li><a class="reference internal" href="#module-web_tracking.utils.validator">web_tracking.utils.validator module</a></li>
+<li><a class="reference internal" href="#module-web_tracking.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Web Tracking</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>web_tracking.utils package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/web_tracking.utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="web-tracking-utils-package">
+<h1>web_tracking.utils package<a class="headerlink" href="#web-tracking-utils-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-web_tracking.utils.utils">
+<span id="web-tracking-utils-utils-module"></span><h2>web_tracking.utils.utils module<a class="headerlink" href="#module-web_tracking.utils.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="web_tracking.utils.utils.Utils">
+<em class="property">class </em><code class="sig-prename descclassname">web_tracking.utils.utils.</code><code class="sig-name descname">Utils</code><a class="headerlink" href="#web_tracking.utils.utils.Utils" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>General purpose functions.</p>
+<dl class="py method">
+<dt id="web_tracking.utils.utils.Utils.flatten">
+<em class="property">static </em><code class="sig-name descname">flatten</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seq</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.utils.utils.Utils.flatten" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flattens the nested list, only works on lists with depth=1</p>
+<dl class="simple">
+<dt>seq: list</dt><dd><p>List of lists</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>list</dt><dd><p>Flattened list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.utils.utils.Utils.parallelize_dataframe">
+<em class="property">static </em><code class="sig-name descname">parallelize_dataframe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">func</span></em>, <em class="sig-param"><span class="n">cpu_count</span><span class="o">=</span><span class="default_value">8</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.utils.utils.Utils.parallelize_dataframe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes the function in the parallel computing fashion.</p>
+<dl class="simple">
+<dt>df: pandas.DataFrame</dt><dd><p>A dataframe.</p>
+</dd>
+<dt>func: function</dt><dd><p>A function which is applied on the dataframe.</p>
+</dd>
+<dt>cpu_count: integer</dt><dd><p>A number CPU that runs the method.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>pandas.DataFrame</dt><dd><p>A dataframe with computed results.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-web_tracking.utils.validator">
+<span id="web-tracking-utils-validator-module"></span><h2>web_tracking.utils.validator module<a class="headerlink" href="#module-web_tracking.utils.validator" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="web_tracking.utils.validator.Validator">
+<em class="property">class </em><code class="sig-prename descclassname">web_tracking.utils.validator.</code><code class="sig-name descname">Validator</code><a class="headerlink" href="#web_tracking.utils.validator.Validator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class for validating the dataframes.</p>
+<dl class="py method">
+<dt id="web_tracking.utils.validator.Validator.check_columns">
+<code class="sig-name descname">check_columns</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">required_columns</span></em>, <em class="sig-param"><span class="n">input_columns</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.utils.validator.Validator.check_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the required columns are in the input columns.</p>
+<dl class="simple">
+<dt>required_columns: list</dt><dd><p>A list of column names that we want.</p>
+</dd>
+<dt>input_columns: list</dt><dd><p>A list of column names that we search in.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Boolean</dt><dd><p>If required columns take place, True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="web_tracking.utils.validator.Validator.check_dtypes">
+<code class="sig-name descname">check_dtypes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">df</span></em>, <em class="sig-param"><span class="n">rules</span></em><span class="sig-paren">)</span><a class="headerlink" href="#web_tracking.utils.validator.Validator.check_dtypes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the types of the dataframe columns.</p>
+<dl class="simple">
+<dt>df: pandas.DataFrame</dt><dd><p>An input dataframe.</p>
+</dd>
+<dt>rules: dict</dt><dd><p>A dictionary of column name and type string pairs.</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Boolean</dt><dd><p>If columns have the required types, True.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-web_tracking.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-web_tracking.utils" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Orkut Karacalik
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
