@@ -10,7 +10,7 @@ Understanding human activities and movements on the Web is not only important fo
 * [[Pre-process 1]](release/00_1_Adding_Category.ipynb) Adding category information from subdomain.
 * [[Pre-process 2]](release/00_2_Filtering_Users.ipynb) Filtering users out based on the length of their trajectories.
 
-#### Analysis
+#### Analyses
 * [[Analysis 1]](release/01_Basic_Statistics.ipynb) Basic statistics about the data set.
 * [[Analysis 3]](release/03_Predictability.ipynb) Comparing predictability of different types trajectories and confidence intervals
 * [[Analysis 4]](release/04_Predictability_and_Demographics.ipynb) Examining the relationship between predictability and demographics. 
