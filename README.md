@@ -1,6 +1,4 @@
-# Web Tracking
-
-> Web browsing trajectory analysis library.
+# Web Tracking: a library to analyize web browsing behavior.
 
 ## Install
 
@@ -21,3 +19,6 @@
     ```bash
     python setup.py install
     ```
+## Analyses
+
+* [Web Routineness and Limits of Predictability: Investigating Demographic and Behavioral Differences Using Web Tracking Data](research/web_routineness/) by Juhi Kulshrestha, Marcos Oliveira, Orkut Karacalik, Denis Bonnay, Claudia Wagner
