@@ -12,6 +12,7 @@
 
 #### Analyses
 * [[Analysis 1]](release/01_Basic_Statistics.ipynb) Basic statistics about the data set.
-* [[Analysis 3]](release/03_Predictability.ipynb) Comparing predictability of different types trajectories and confidence intervals
+* [[Analysis 2]](release/02_Framework.ipynb) The predictability measurement framework.
+* [[Analysis 3]](release/03_Predictability.ipynb) Comparing predictability of different types trajectories and confidence intervals.
 * [[Analysis 4]](release/04_Predictability_and_Demographics.ipynb) Examining the relationship between predictability and demographics. 
 * [[Analysis 5]](release/05_Predictability_and_Browsing_Behavior.ipynb) Examining the relationship between predictability and browsing behavior. 
