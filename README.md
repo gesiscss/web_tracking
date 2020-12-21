@@ -1,4 +1,4 @@
-# Web Tracking: a library to analyize web browsing behavior.
+# Web Tracking: a library to analyze web browsing behavior.
 
 ## Install
 
