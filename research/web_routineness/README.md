@@ -16,3 +16,9 @@
 * [[Analysis 3]](release/03_Predictability.ipynb) Comparing predictability of different types trajectories and confidence intervals.
 * [[Analysis 4]](release/04_Predictability_and_Demographics.ipynb) Examining the relationship between predictability and demographics. 
 * [[Analysis 5]](release/05_Predictability_and_Browsing_Behavior.ipynb) Examining the relationship between predictability and browsing behavior. 
+
+## Data
+
+The dataset used to regenerate the results for the aforementioned paper using the above notebooks: 
+
+A web tracking data set of online browsing behavior of 2,148 users. https://doi.org/10.5281/zenodo.4383164.
