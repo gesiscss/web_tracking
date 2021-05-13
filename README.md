@@ -25,4 +25,4 @@
 
 ## Data
 
-* A web tracking data set of online browsing behavior of 2,148 users. https://doi.org/10.5281/zenodo.4383164.
+* A web tracking data set of online browsing behavior of 2,148 users. https://zenodo.org/record/4757574.
