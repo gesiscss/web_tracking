@@ -22,3 +22,7 @@
 ## Analyses
 
 * [Web Routineness and Limits of Predictability: Investigating Demographic and Behavioral Differences Using Web Tracking Data](research/web_routineness/) by Juhi Kulshrestha, Marcos Oliveira, Orkut Karacalik, Denis Bonnay, Claudia Wagner
+
+## Data
+
+* A web tracking data set of online browsing behavior of 2,148 users. https://doi.org/10.5281/zenodo.4383164.
