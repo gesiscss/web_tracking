@@ -13,6 +13,6 @@ setup(name='web_tracking',
           'pandas==1.0.5',
           'matplotlib==3.2.2',
           'statsmodels==0.11.1',
-          'scipy==1.5.0'
+          'scipy==1.10.0'
       ],
       zip_safe=False)
